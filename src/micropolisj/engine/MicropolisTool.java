@@ -29,6 +29,11 @@ public enum MicropolisTool
 	POWERPLANT(4, 3000),
 	NUCLEAR(4, 5000),
 	AIRPORT(6, 10000),
+<<<<<<< Updated upstream
+=======
+	NEW_BUILDING(3, 100), //Placeholder for a new tool. 
+	CANNON(3, 200),
+>>>>>>> Stashed changes
 	QUERY(1, 0);
 
 	int size;
@@ -68,8 +73,11 @@ public enum MicropolisTool
 		case POWERPLANT:
 		case NUCLEAR:
 		case AIRPORT:
+<<<<<<< Updated upstream
+=======
+		case CANNON:
+>>>>>>> Stashed changes
 			return new BuildingTool(engine, this, xpos, ypos);
-
 		default:
 			return new ToolStroke(engine, this, xpos, ypos);
 		}

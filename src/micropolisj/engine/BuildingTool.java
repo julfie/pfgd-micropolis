@@ -51,7 +51,14 @@ class BuildingTool extends ToolStroke
 
 		case AIRPORT:
 			return applyZone(eff, AIRPORT);
+<<<<<<< Updated upstream
 
+=======
+			
+		case CANNON:
+			return applyZone(eff, CANNON);
+			
+>>>>>>> Stashed changes
 		default:
 			// not expected
 			throw new Error("unexpected tool: "+tool);

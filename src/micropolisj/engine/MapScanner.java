@@ -41,7 +41,12 @@ class MapScanner extends TileBehavior
 		STADIUM_EMPTY,
 		STADIUM_FULL,
 		AIRPORT,
+<<<<<<< Updated upstream
 		SEAPORT;
+=======
+		SEAPORT,
+		CANNON;
+>>>>>>> Stashed changes
 	}
 
 	@Override
@@ -84,6 +89,12 @@ class MapScanner extends TileBehavior
 		case SEAPORT:
 			doSeaport();
 			return;
+<<<<<<< Updated upstream
+=======
+		case CANNON:
+			doCannon();
+			return;
+>>>>>>> Stashed changes
 		default:
 			assert false;
 		}
@@ -203,6 +214,20 @@ class MapScanner extends TileBehavior
 
 		city.powerPlants.add(new CityLocation(xpos, ypos));
 	}
+<<<<<<< Updated upstream
+=======
+	
+	//Placeholder for a new building
+	//Look to the other do<building name>() functions to guidance on what this function should do.
+	void doCannon()
+	{
+		//Very basic building functionality. Checks for power and does "repair"
+		boolean powerOn = checkZonePower();
+		if ((city.cityTime % 8) == 0) {
+			repairZone(CANNON, 3);
+		}
+	}
+>>>>>>> Stashed changes
 
 	void doFireStation()
 	{
