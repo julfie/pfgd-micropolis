@@ -1019,3 +1019,13 @@
 966   new_building@0,32           (conducts)
 967   new_building@16,32          (conducts)
 968   new_building@32,32          (conducts)
+# BEGIN CANNNON #
+969   cannon@0,0            (conducts)
+970   cannon@16,0           (conducts)
+971   cannon@32,0           (conducts)
+972   cannon@0,16           (conducts)
+973   cannon@16,16    (zone)(conducts)(bulldozable)(building=3x3)(behavior=CANNON)(pollution=200)(description=#29)
+974   cannon@32,16          (conducts)
+975   cannon@0,32           (conducts)
+976   cannon@16,32          (conducts)
+977   cannon@32,32          (conducts)
