@@ -1009,23 +1009,13 @@
 957   misc_animation@0,2080
 958   misc_animation@0,2096
 959   misc_animation@0,2112
-# BEGIN NEW BUILDING #
-960   new_building@0,0            (conducts)
-961   new_building@16,0           (conducts)
-962   new_building@32,0           (conducts)
-963   new_building@0,16           (conducts)
-964   new_building@16,16    (zone)(conducts)(building=3x3)(behavior=NEW_BUILDING)(description=#28)
-965   new_building@32,16          (conducts)
-966   new_building@0,32           (conducts)
-967   new_building@16,32          (conducts)
-968   new_building@32,32          (conducts)
 # BEGIN CANNNON #
-969   cannon@0,0            (conducts)
-970   cannon@16,0           (conducts)
-971   cannon@32,0           (conducts)
-972   cannon@0,16           (conducts)
-973   cannon@16,16    (zone)(conducts)(bulldozable)(building=3x3)(behavior=CANNON)(pollution=200)(description=#29)
-974   cannon@32,16          (conducts)
-975   cannon@0,32           (conducts)
-976   cannon@16,32          (conducts)
-977   cannon@32,32          (conducts)
+960   cannon@0,0            (conducts)
+961   cannon@16,0           (conducts)
+962   cannon@32,0           (conducts)
+963   cannon@0,16           (conducts)
+964   cannon@16,16    (zone)(conducts)(bulldozable)(building=3x3)(behavior=CANNON)(pollution=300)(description=#29)
+965   cannon@32,16          (conducts)
+966   cannon@0,32           (conducts)
+967   cannon@16,32          (conducts)
+968   cannon@32,32          (conducts)

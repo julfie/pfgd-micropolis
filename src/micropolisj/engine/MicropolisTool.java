@@ -29,7 +29,6 @@ public enum MicropolisTool
 	POWERPLANT(4, 3000),
 	NUCLEAR(4, 5000),
 	AIRPORT(6, 10000),
-	NEW_BUILDING(3, 100), //Placeholder for a new tool. 
 	CANNON(3, 200),
 	QUERY(1, 0);
 

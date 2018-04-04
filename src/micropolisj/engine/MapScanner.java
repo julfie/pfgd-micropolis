@@ -212,6 +212,7 @@ class MapScanner extends TileBehavior
 	//Look to the other do<building name>() functions to guidance on what this function should do.
 	void doCannon()
 	{
+		city.cannonCount++;
 		//Very basic building functionality. Checks for power and does "repair"
 		boolean powerOn = checkZonePower();
 		if ((city.cityTime % 8) == 0) {

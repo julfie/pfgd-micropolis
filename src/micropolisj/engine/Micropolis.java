@@ -119,6 +119,7 @@ public class Micropolis
 	int hospitalCount;
 	int churchCount;
 	int policeCount;
+	int cannonCount;
 	int fireStationCount;
 	int stadiumCount;
 	int coalCount;
@@ -532,6 +533,7 @@ public class Micropolis
 		hospitalCount = 0;
 		churchCount = 0;
 		policeCount = 0;
+		cannonCount = 0;
 		fireStationCount = 0;
 		stadiumCount = 0;
 		coalCount = 0;
@@ -1787,7 +1789,7 @@ public class Micropolis
 
 	/** Annual maintenance cost of each fire station. */
 	static final int FIRE_STATION_MAINTENANCE = 100;
-
+	
 	/**
 	 * Calculate the current budget numbers.
 	 */
@@ -2522,7 +2524,7 @@ public class Micropolis
 		int totalZoneCount = resZoneCount + comZoneCount + indZoneCount;
 		int powerCount = nuclearCount + coalCount;
 
-		int z = cityTime % 64;
+		int z = cityTime % 67;
 		switch (z) {
 		case 1:
 			if (totalZoneCount / 4 >= resZoneCount) {
@@ -2599,6 +2601,10 @@ public class Micropolis
 			if (totalPop > 60 && policeCount == 0) {
 				sendMessage(MicropolisMessage.NEED_POLICE);
 			}
+			// TODO: Check if this needs to be in here or can get its own case
+			if (totalPop > 60 && cannonCount == 0) {
+				sendMessage(MicropolisMessage.NEED_CANNON);
+			}
 			break;
 		case 51:
 			if (cityTax > 12) {
@@ -2624,6 +2630,8 @@ public class Micropolis
 			if (trafficAverage > 60) {
 				sendMessage(MicropolisMessage.HIGH_TRAFFIC);
 			}
+			break;
+		case 66:
 			break;
 		default:
 			//nothing
