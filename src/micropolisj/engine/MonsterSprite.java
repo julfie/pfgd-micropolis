@@ -22,6 +22,8 @@ public class MonsterSprite extends Sprite
 	int origX;
 	int origY;
 	int step;
+	int health; // the amount of health the monster has
+	int killCount; // the amount of times the monster has died
 	boolean flag; //true if the monster wants to return home
 
 	//GODZILLA FRAMES
@@ -66,6 +68,9 @@ public class MonsterSprite extends Sprite
 		this.destY = p.y * 16 + 8;
 		this.flag = false;
 		this.step = 1;
+		
+		this.killCount = 0;
+		this.health = 1000;
 	}
 
 	@Override
@@ -158,6 +163,21 @@ public class MonsterSprite extends Sprite
 
 		if (this.count > 0) {
 			this.count--;
+			
+			if (city.cannonCount > 0) {
+				while (!city.cannonMap.isEmpty()) {
+					CityLocation loc = city.cannonMap.pop();
+					
+					int dist = getDis(this.x/16, this.y/16, loc.x, loc.y)/2;
+					System.out.print(" ( " + this.x/16 + " , " + this.y/16 + " ) | ");
+					System.out.print(" ( " + loc.x + " , " + loc.y + " ) | ");
+					System.out.print(dist);
+					System.out.print("\n");
+					if (dist <= 5) {
+						monsterDeath();
+					}
+				}
+			}
 		}
 
 		int c = getChar(x, y);
@@ -180,5 +200,13 @@ public class MonsterSprite extends Sprite
 		}
 
 		destroyTile(x / 16, y / 16);
+	}
+	
+	public void monsterDeath()
+	{
+		this.count = 0;
+		this.frame = 0;
+		this.killCount++;
+		city.spend(-1000);
 	}
 }
