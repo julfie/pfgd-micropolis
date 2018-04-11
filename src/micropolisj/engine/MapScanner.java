@@ -208,16 +208,16 @@ class MapScanner extends TileBehavior
 		city.powerPlants.add(new CityLocation(xpos, ypos));
 	}
 	
-	//Placeholder for a new building
-	//Look to the other do<building name>() functions to guidance on what this function should do.
+	// place a cannon and add it to the map of cannon locations
 	void doCannon()
 	{
 		city.cannonCount++;
-		//Very basic building functionality. Checks for power and does "repair"
+		// Checks for power and does "repair"
 		boolean powerOn = checkZonePower();
 		if ((city.cityTime % 8) == 0) {
 			repairZone(CANNON, 3);
 		}
+		// add location to map
 		city.cannonMap.add(new CityLocation(xpos, ypos));
 	}
 

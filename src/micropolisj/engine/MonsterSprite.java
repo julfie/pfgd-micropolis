@@ -165,16 +165,20 @@ public class MonsterSprite extends Sprite
 			this.count--;
 			
 			if (city.cannonCount > 0) {
+				// for every cannon
 				while (!city.cannonMap.isEmpty()) {
 					CityLocation loc = city.cannonMap.pop();
-					
+					// get distance between the monster and cannon
 					int dist = getDis(this.x/16, this.y/16, loc.x, loc.y)/2;
-					System.out.print(" ( " + this.x/16 + " , " + this.y/16 + " ) | ");
-					System.out.print(" ( " + loc.x + " , " + loc.y + " ) | ");
-					System.out.print(dist);
-					System.out.print("\n");
-					if (dist <= 5) {
-						monsterDeath();
+//					System.out.print(" ( " + this.x/16 + " , " + this.y/16 + " ) | ");
+//					System.out.print(" ( " + loc.x + " , " + loc.y + " ) | ");
+//					System.out.print(dist);
+//					System.out.print("\n");
+					// if the distance is less than 6
+					if (dist <= 6) {
+						// the monster dies
+						monsterDeath(loc.x, loc.y);
+						this.explodeSprite();
 					}
 				}
 			}
@@ -202,11 +206,12 @@ public class MonsterSprite extends Sprite
 		destroyTile(x / 16, y / 16);
 	}
 	
-	public void monsterDeath()
+	public void monsterDeath(int x, int y)
 	{
 		this.count = 0;
 		this.frame = 0;
 		this.killCount++;
+		city.sendMessageAt(MicropolisMessage.MONSTER_KILL, x, y);
 		city.spend(-1000);
 	}
 }

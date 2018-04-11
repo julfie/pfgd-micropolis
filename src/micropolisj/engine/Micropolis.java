@@ -2347,6 +2347,8 @@ public class Micropolis
 			int t = getTile(x, y);
 			if (t == RIVER) {
 				makeMonsterAt(x, y);
+				// send an alert for the monster
+				sendMessageAt(MicropolisMessage.MONSTER_REPORT, x, y);
 				return;
 			}
 		}
