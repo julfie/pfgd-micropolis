@@ -86,7 +86,6 @@ public class Micropolis
 	public int [][] fireRate;       //firestations reach- used for overlay graphs
 	int [][] policeMap;      //police stations- cleared and rebuilt each sim cycle
 	public int [][] policeMapEffect;//police stations reach- used for overlay graphs
-//	int [][] cannonMap;
 	
 	Stack<CityLocation> cannonMap = new Stack<CityLocation>();
 	
@@ -248,7 +247,6 @@ public class Micropolis
 		rateOGMem = new int[smY][smX];
 		fireStMap = new int[smY][smX];
 		policeMap = new int[smY][smX];
-//		cannonMap = new int[smY][smX];
 		policeMapEffect = new int[smY][smX];
 		fireRate = new int[smY][smX];
 		comRate = new int[smY][smX];
@@ -552,7 +550,6 @@ public class Micropolis
 			for (int x = 0; x < fireStMap[y].length; x++) {
 				fireStMap[y][x] = 0;
 				policeMap[y][x] = 0;
-//				cannonMap[y][x] = 0;
 			}
 		}
 	}

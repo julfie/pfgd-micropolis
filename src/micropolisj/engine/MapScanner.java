@@ -217,8 +217,10 @@ class MapScanner extends TileBehavior
 		if ((city.cityTime % 8) == 0) {
 			repairZone(CANNON, 3);
 		}
-		// add location to map
-		city.cannonMap.add(new CityLocation(xpos, ypos));
+		// if it has power, add location to map
+		if (powerOn) {
+			city.cannonMap.add(new CityLocation(xpos, ypos));
+		}
 	}
 
 	void doFireStation()
