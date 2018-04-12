@@ -170,12 +170,8 @@ public class MonsterSprite extends Sprite
 					CityLocation loc = city.cannonMap.pop();
 					// get distance between the monster and cannon
 					int dist = getDis(this.x/16, this.y/16, loc.x, loc.y)/2;
-//					System.out.print(" ( " + this.x/16 + " , " + this.y/16 + " ) | ");
-//					System.out.print(" ( " + loc.x + " , " + loc.y + " ) | ");
-//					System.out.print(dist);
-//					System.out.print("\n");
 					// if the distance is less than 6
-					if (dist <= 6) {
+					if (dist <= 8) {
 						// the monster dies
 						monsterDeath(loc.x, loc.y);
 						this.explodeSprite();
